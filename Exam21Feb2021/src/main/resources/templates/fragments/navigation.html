@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg bg-nav rounded" xmlns:th="http://www.w3.org/1999/xhtml">
+    <a class="nav-link" th:href="@{/home}">
+        <img src="/img/headphones.png" width="40px" alt="HeadPhones picture">
+    </a>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+        <ul class="navbar-nav row">
+            <li class="nav-item col-md-4">
+                <a class="nav-link text-white active h5"
+                   th:href="@{/login}"
+                   th:if="!${@currentUser.isLoggedIn()}">Login</a>
+            </li>
+            <li class="nav-item col-md-4">
+                <a class="nav-link text-white active h5"
+                   th:href="@{/register}"
+                   th:if="!${@currentUser.isLoggedIn()}">Register</a>
+            </li>
+            <li class="nav-item col-md-4">
+                <a class="nav-link text-white active h5"
+                   th:href="@{/add-album}"
+                   th:if="${@currentUser.isLoggedIn()}">Add Album</a>
+            </li>
+            <li class="nav-item col-md-4">
+                <a class="nav-link text-white active h5"
+                   th:href="@{/logout}"
+                   th:if="${@currentUser.isLoggedIn()}">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg rounded navbar-dark bg-judge font-weight-bold"
+     xmlns:th="http://www.w3.org/1999/xhtml">
+    <a class="navbar-brand" th:href="@{/home}">JUDGE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/home}">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/problem-create}">Create Problem</a>
+                <!--<div class="dropdown show">-->
+                <!--<a class="nav-link dropdown-toggle" href="#" role="button" id="problems-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                <!--Problems-->
+                <!--</a>-->
+
+                <!--<div class="dropdown-menu" aria-labelledby="problems-dropdown">-->
+                <!--<a class="dropdown-item" href="/problems/all">All Problems</a>-->
+                <!--<div class="dropdown-divider"></div>-->
+                <!--<a class="dropdown-item" href="/problems/create">Create Problem</a>-->
+                <!--</div>-->
+                <!--</div>-->
+            </li>
+            <!--<li class="nav-item active">-->
+            <!--<a class="nav-link" href="/submissions/all">Submissions</a>-->
+            <!--</li>-->
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/logout}">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

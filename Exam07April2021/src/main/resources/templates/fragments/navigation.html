@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-info rounded" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/home}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/login}" th:if="!${@currentUser.isLoggedIn()}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/register}" th:if="!${@currentUser.isLoggedIn()}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/order-add}" th:if="${@currentUser.isLoggedIn()}">Add Order</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/logout}" th:if="${@currentUser.isLoggedIn()}">Logout</a>
+            </li>
+        </ul>
+        <img width="50px" src="/images/coffee.png" alt="Coffee image">
+    </div>
+</nav>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="www.http://thymeleaf.org">
+      <head>
+            <meta charset="UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <title>Andrey's</title>
+            <link rel="stylesheet" href="/css/reset-css.css"/>
+            <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+            <link rel="stylesheet" href="/css/style.css"/>
+        </head>
+<body>
+<header th:include="/fragments/navbarLoggedIn">
+
+        </header>
+    <main>
+        <h1 class="text-center mt-2"><span class="badge badge-pill badge-dark">Products</span></h1>
+        <hr class="hr-3"/>
+        <div class="bg-blur container w-50">
+            <span th:each="p : ${productList}"
+                  th:object="${p}">
+            <div class="row mb-4 d-flex flex-column text-center">
+                <a th:href="@{/details/(id=${p.id})}">
+                    <img th:if="*{sex.toString()} == 'FEMALE' and *{category.toString()} == 'DENIM'" src="/img/FEMALE-DENIM.jpg" class="img-thumbnail" width="200"
+                      height="200"/>
+                    <img th:if="*{sex.toString()} == 'FEMALE' and *{category.toString()} == 'JACKET'" src="/img/FEMALE-JACKET.jpg" class="img-thumbnail" width="200"
+                         height="200"/>
+                    <img th:if="*{sex.toString()} == 'FEMALE' and *{category.toString()} == 'SHIRT'" src="/img/FEMALE-SHIRT.jpg" class="img-thumbnail" width="200"
+                                            height="200"/>
+                    <img th:if="*{sex.toString()} == 'FEMALE' and *{category.toString()} == 'SHORTS'" src="/img/FEMALE-SHORTS.jpg" class="img-thumbnail" width="200"
+                         height="200"/>
+                    <img th:if="*{sex.toString()} == 'MALE' and *{category.toString()} == 'DENIM'" src="/img/MALE-DENIM.jpg" class="img-thumbnail" width="200"
+                         height="200"/>
+                    <img th:if="*{sex.toString()} == 'MALE' and *{category.toString()} == 'JACKET'" src="/img/MALE-JACKET.jpg" class="img-thumbnail" width="200"
+                         height="200"/>
+                    <img th:if="*{sex.toString()} == 'MALE' and *{category.toString()} == 'SHIRT'" src="/img/MALE-SHIRT.jpg" class="img-thumbnail" width="200"
+                         height="200"/>
+                    <img th:if="*{sex.toString()} == 'MALE' and *{category.toString()} == 'SHORTS'" src="/img/MALE-SHORTS.jpg" class="img-thumbnail" width="200"
+                         height="200"/>
+                </a>
+                 <h5 class="text-center" th:text="${p.name}">Buzzer</h5>
+                <h2 class="text-center" th:text="${p.price}">65.00</h2>
+            </div>
+            </span>
+        </div>
+    </main>
+    <span style="visibility: hidden">...</span>
+    <ui:include src="templates/footer.xhtml"/>
+</body>
+</html>

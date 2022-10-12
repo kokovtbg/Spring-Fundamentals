@@ -1,0 +1,13 @@
+package bg.softuni.andrey.repository;
+
+import bg.softuni.andrey.model.Product;
+import bg.softuni.andrey.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface ProductRepository extends JpaRepository<Product, Long> {
+    List<Product> findAllByUser(User user);
+}
